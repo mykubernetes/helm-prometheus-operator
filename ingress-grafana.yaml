@@ -9,6 +9,6 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: imooc-prom-grafana
+          serviceName: prom-grafana
           servicePort: 80
         path: /
