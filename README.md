@@ -277,5 +277,47 @@ prometheus:
     ruleSelector: {}
     ## Example which select all prometheusrules resources
     ## with label "prometheus" with values any of "example-rules" or "example-rules-2"
+```  
 
+
+3、scheduler  
+```
+修改scheduler自动发现
+# vim values.yaml
+kubeScheduler:
+  enabled: true
+
+  ## If your kube scheduler is not deployed as a pod, specify IPs it can be found on
+  ##
+  endpoints:
+  - 10.155.20.50                 #填写二进制部署的scheduler地址
+  # - 10.141.4.23
+  # - 10.141.4.24
+
+  ## If using kubeScheduler.endpoints only the port and targetPort are used
+  ##
+  service:
+    port: 10251
+    targetPort: 10251
+    selector:
+      component: kube-scheduler
+```  
+
+4、kubelet
+```
+修改kubelet自动发现
+# vim values.yaml
+kubelet:
+  enabled: true
+  namespace: kube-system
+
+  serviceMonitor:
+    ## Scrape interval. If not set, the Prometheus default scrape interval is used.
+    ##
+    interval: ""
+
+    ## Enable scraping the kubelet over https. For requirements to enable this see
+    ## https://github.com/coreos/prometheus-operator/issues/926
+    ##
+    https: false           #修改http为false
 ```  
