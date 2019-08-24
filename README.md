@@ -321,3 +321,8 @@ kubelet:
     ##
     https: false           #修改http为false
 ```  
+
+5、修改完配置后更新  
+```
+# helm upgrad prom ./prometheus-operator/ -f ./prometheus-operator/values.yaml 
+```  
