@@ -4,6 +4,10 @@ git clone https://github.com/mykubernetes/helm-prometheus-operator.git
 helm install ./helm-prometheus-operator/ --name prom --namespace monitoring
 ```  
 
+grafana  
+用户： admin  
+密码： prom-operator  
+
 二进制安装需要修改配置文件  
 1、ControllerManager  
 ```
