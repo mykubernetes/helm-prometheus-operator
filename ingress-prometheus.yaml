@@ -5,7 +5,7 @@ metadata:
   namespace: monitoring
 spec:
   rules:
-  - host: prometheus.mooc.com
+  - host: prometheus.com
     http:
       paths:
       - backend:
