@@ -324,5 +324,10 @@ kubelet:
 
 5、修改完配置后更新  
 ```
-# helm upgrad prom ./prometheus-operator/ -f ./prometheus-operator/values.yaml 
+# helm upgrad prom ./prometheus-operator/ -f ./prometheus-operator/values.yaml
+如果报错可重新部署
+# helm delete prom --purge
+# kubectl get crd |grep coreos
+# kubectl delete crd $(kubectl get crd |grep coreos|awk '{print $1}')
+# helm install ./prometheus-operator/ --name prom --namespace monitoring
 ```  
