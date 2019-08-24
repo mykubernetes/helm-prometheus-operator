@@ -5,7 +5,7 @@ metadata:
   namespace: monitoring
 spec:
   rules:
-  - host: prom-grafana.mooc.com
+  - host: prom-grafana.com
     http:
       paths:
       - backend:
